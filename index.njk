@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+{%- set username = 'David' %}
+{%-
+  set posts = [{
+  id: 1,
+  title: 'First title'
+  }, {
+  id: 2,
+  title: 'Second title'
+  }]
+%}
+{%- if username %}
+<h1>Hello, {{ username }} wonk!</h1>
+{%- else %}
+<h1>Hello, Wilco wonk!</h1>
+{%- endif %}
+<ul>
+{%- for post in posts %}
+<li>{{ post.title }}, {{ post.id }}</li>
+{%- endfor %}
+</ul>
